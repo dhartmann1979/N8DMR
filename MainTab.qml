@@ -24,7 +24,7 @@ Item {
     property alias data2: infoSource
     property alias data3: infoDestination
     property alias data4: infoGateway
-    property alias data5: infoStatus
+    property alias data5: hiddenLabel5
     property alias data6: infoExtra
     property alias label1: hiddenLabel1
     property alias label2: hiddenLabel2
@@ -181,7 +181,7 @@ Item {
                             color: "#8494b4"
                             font.pixelSize: 8
                             font.bold: true
-                            letterSpacing: .6 }
+                            font.letterSpacing: .6 }
                     }
                     ComboBox {
                         id: hostSelect
