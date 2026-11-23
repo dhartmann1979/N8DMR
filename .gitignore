@@ -1,0 +1,8 @@
+build/
+dist/
+work/
+outputs/
+.vscode/
+.idea/
+*.user
+*.log

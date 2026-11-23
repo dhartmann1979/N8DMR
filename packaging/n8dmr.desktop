@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=N8DMR
+GenericName=DMR-Sprechfunkclient
+Comment=Die N8schicht · Digital Mobile Radio
+Exec=N8DMR
+Icon=n8dmr
+Terminal=false
+Type=Application
+Categories=Network;AudioVideo;HamRadio;
+StartupNotify=true
