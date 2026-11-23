@@ -2,6 +2,8 @@
 #include <QQmlApplicationEngine>
 #include <QIcon>
 #include <QQmlContext>
+#include <QDebug>
+#include <cstdio>
 #include "droidstar.h"
 
 int main(int argc, char *argv[])
@@ -13,6 +15,11 @@ int main(int argc, char *argv[])
     app.setWindowIcon(QIcon(":/assets/n8schicht-icon.png"));
     qmlRegisterType<DroidStar>("org.die.n8schicht.n8dmr", 1, 0, "DroidStar");
     QQmlApplicationEngine engine;
+    QObject::connect(&engine, &QQmlApplicationEngine::warnings, &app,
+        [](const QList<QQmlError> &warnings) {
+            for (const auto &warning : warnings)
+                std::fprintf(stderr, "%s\n", qPrintable(warning.toString()));
+        });
 #ifdef USE_FLITE
     engine.rootContext()->setContextProperty("USE_FLITE", QVariant(true));
 #else
