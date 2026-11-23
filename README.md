@@ -29,7 +29,7 @@ Erforderlich sind Qt 6.5 oder neuer mit Qt Quick, Quick Controls, Multimedia, Ne
 ### Linux (GNOME)
 
 ```sh
-sudo apt install cmake ninja-build build-essential qt6-base-dev qt6-declarative-dev qt6-multimedia-dev qt6-serialport-dev qt6-tools-dev
+sudo apt install cmake ninja-build build-essential qt6-base-dev qt6-base-private-dev qt6-declarative-dev qt6-multimedia-dev qt6-serialport-dev qt6-tools-dev
 cmake -S . -B build -G Ninja
 cmake --build build
 ./build/N8DMR
