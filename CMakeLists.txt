@@ -253,12 +253,14 @@ install(TARGETS N8DMR
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
-qt_generate_deploy_app_script(
-    TARGET N8DMR
-    OUTPUT_SCRIPT deploy_script
-    NO_UNSUPPORTED_PLATFORM_ERROR
-)
-install(SCRIPT ${deploy_script})
+if(WIN32)
+    qt_generate_deploy_app_script(
+        TARGET N8DMR
+        OUTPUT_SCRIPT deploy_script
+        NO_UNSUPPORTED_PLATFORM_ERROR
+    )
+    install(SCRIPT ${deploy_script})
+endif()
 
 if(UNIX AND NOT APPLE)
     install(FILES packaging/n8dmr.desktop DESTINATION share/applications)
